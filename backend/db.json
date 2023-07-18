@@ -1,0 +1,17 @@
+{
+  "users":[
+    {
+      "id":1,
+      "name":"Rohit",
+      "email":"rohit@gmail.com",
+      "password": "Roit@123"
+    }
+  ],
+  "lists":[
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "i am learning"
+    }
+  ]
+}
