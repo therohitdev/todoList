@@ -3,46 +3,33 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import App from './App';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import NavLink from './component/Nav';
+import Login from './pages/Login';
+import StateMangement from './pages/StateMangement';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          <Navbar.Brand href="#home">Shivani Website</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link>
-              <Link to="/">Codes</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/home">Home</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/about">About</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/shivani">Contact</Link>
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/shivani" element={<h1>Hii shivani</h1>} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <NavLink />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/shivani" element={<h1>Hii shivani</h1>} />
+          <Route path="/codes" element={<StateMangement />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

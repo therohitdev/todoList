@@ -1,17 +1,28 @@
 {
-  "users":[
+  "users": [
     {
-      "id":1,
-      "name":"Rohit",
-      "email":"rohit@gmail.com",
+      "id": 1,
+      "name": "Rohit",
+      "email": "rohit@gmail.com",
       "password": "Roit@123"
+    },
+    {
+      "name": "Shivani",
+      "email": "shavini@gmail.com",
+      "password": "Shivani@123",
+      "id": 2
     }
   ],
-  "lists":[
+  "lists": [
     {
       "id": 1,
       "userId": 1,
       "task": "i am learning"
+    },
+    {
+      "userId": 2,
+      "task": "i am eating",
+      "id": 2
     }
   ]
 }
